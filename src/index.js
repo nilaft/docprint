@@ -50,11 +50,11 @@ module.exports = function(options) {
 		dataStructures = dataStructures && dataStructures.content;
 
 		var css = fs.readFileSync(__dirname + '/css/style.css').toString();
-		var langs = ['curl', 'node', 'python', 'java', 'ruby', 'php', 'go'];
+		var langs = ['node'];
 
 		langs.forEach(function(l) {
-			mkdir.sync(destFolder + '/' + l);
-			require('fs').writeFileSync(destFolder + '/' + l +  '/index.html', 
+			mkdir.sync(destFolder );
+			require('fs').writeFileSync(destFolder + '/index.html', 
 				pug.renderFile(__dirname + '/jade/index.pug', { 
 					output : output, 
 					css: css, 
