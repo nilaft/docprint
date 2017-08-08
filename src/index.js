@@ -54,7 +54,7 @@ module.exports = function(options) {
 
 		langs.forEach(function(l) {
 			mkdir.sync(destFolder );
-			require('fs').writeFileSync(destFolder + '/index.html', 
+			require('fs').writeFileSync(destFolder + '/' + options.outputFilename||'index.html', 
 				pug.renderFile(__dirname + '/jade/index.pug', { 
 					output : output, 
 					css: css, 
